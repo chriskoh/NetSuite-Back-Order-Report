@@ -3,8 +3,8 @@
  * 
  * Version		Date            Author		Remarks
  * 1.0			8/24/15     	Chris		Begin Development
- * 1.1		    8/26/15			Chris		Created sort by vendor method
- * 1.2			8/31/15			Chris		Removed duplicated vendor names
+ * 1.1		 	8/26/15		Chris		Created sort by vendor method
+ * 1.2			8/31/15		Chris		Removed duplicated vendor names
  */
 
 function backorder(request, response){
