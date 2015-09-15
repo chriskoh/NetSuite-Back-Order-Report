@@ -60,21 +60,21 @@ function function2()
 	columns[1] = new nlobjSearchColumn('line');
 	columns[2] = new nlobjSearchColumn('item').setSort(); 					// getText  || Item Purchased
 	columns[3] = new nlobjSearchColumn('description', 'item'); 				// getValue || Item Description
-	columns[4] = new nlobjSearchColumn('trandate'); 						// getValue || Sales Order Date
-	columns[5] = new nlobjSearchColumn('status'); 							// getText  || Sales Order Status
-	columns[6] = new nlobjSearchColumn('tranid'); 							// getValue || Sales Order Number
-	columns[7] = new nlobjSearchColumn('entity'); 							// getText  || Customer Name
-	columns[8] = new nlobjSearchColumn('location'); 						// getText  || Item Location
+	columns[4] = new nlobjSearchColumn('trandate'); 					// getValue || Sales Order Date
+	columns[5] = new nlobjSearchColumn('status'); 						// getText  || Sales Order Status
+	columns[6] = new nlobjSearchColumn('tranid'); 						// getValue || Sales Order Number
+	columns[7] = new nlobjSearchColumn('entity'); 						// getText  || Customer Name
+	columns[8] = new nlobjSearchColumn('location'); 					// getText  || Item Location
 	columns[9] = new nlobjSearchColumn('vendorname', 'item'); 				// getText  || Vendor
-	columns[10] = new nlobjSearchColumn('quantity'); 						// getValue || Quantity Ordered
+	columns[10] = new nlobjSearchColumn('quantity'); 					// getValue || Quantity Ordered
 	columns[11] = new nlobjSearchColumn('quantityshiprecv'); 				// getValue || Quantity Fulfilled
 	columns[12] = new nlobjSearchColumn('formulanumeric').setFormula("{quantity}-nvl({quantitycommitted},0)-nvl({quantityshiprecv},0)"); // getValue || Back Ordered
-	columns[13] = new nlobjSearchColumn('lastpurchaseprice', 'item'); 		// getValue || Last Purchase Price
+	columns[13] = new nlobjSearchColumn('lastpurchaseprice', 'item'); 			// getValue || Last Purchase Price
 	columns[14] = new nlobjSearchColumn('formulacurrency').setFormula("{quantity}*{rate}"); // getValue || Sales Amount
 	columns[15] = new nlobjSearchColumn('type', 'item'); 					// getText || Item Type
-	columns[16] = new nlobjSearchColumn('custitem_linked_item', 'item'); 	// getValue || Linked item
+	columns[16] = new nlobjSearchColumn('custitem_linked_item', 'item'); 			// getValue || Linked item
 	columns[17] = new nlobjSearchColumn('internalid', 'item'); 				// getValue || Item Internal ID
-	columns[18] = new nlobjSearchColumn('othervendor', 'item'); 			// getText || Other vendor
+	columns[18] = new nlobjSearchColumn('othervendor', 'item'); 				// getText || Other vendor
 
 	// Search results #0-999
 	var results = nlapiSearchRecord('transaction', null, filters, columns);	
@@ -146,7 +146,6 @@ function function2()
 		result = kitsearch[c];
 		//logx('kit', result.getValue('internalid') + ' \\ ' + result.getText('othervendor', 'memberitem') + ' \\ ' + result.getText('memberitem'));
 	}
-	
 	
 	// Search for Payment Method based on list of unique Sales orders
 	var filters = new Array();
